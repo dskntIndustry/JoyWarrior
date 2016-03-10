@@ -1,4 +1,4 @@
-package dsknt.ch.chart;
+package ch.dsknt.chart;
 
 import java.awt.BasicStroke;
 import java.awt.Dimension;
@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CopyOnWriteArrayList;
+
 import javax.swing.JFrame;
+
 import org.knowm.xchart.Chart_XY;
 import org.knowm.xchart.XChartPanel;
 import org.knowm.xchart.internal.chartpart.Chart;
-import dsknt.ch.usb.USBHandler;
+
+import ch.dsknt.usb.USBHandler;
 
 public class RTChart
 {

@@ -1,4 +1,4 @@
-package dsknt.ch.usb;
+package ch.dsknt.usb;
 
 import java.nio.ByteBuffer;
 import java.util.List;

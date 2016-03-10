@@ -1,8 +1,8 @@
-package dsknt.ch.app;
+package ch.dsknt.app;
 
 import java.awt.Toolkit;
 
-import dsknt.ch.chart.RTChart;
+import ch.dsknt.chart.RTChart;
 
 public class USBJoyWarrior
 {
