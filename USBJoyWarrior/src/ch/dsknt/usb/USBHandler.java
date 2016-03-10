@@ -83,19 +83,33 @@ public class USBHandler /*implements Runnable,*/
 															(short)INTERFACE, buffer, 
 															TIMEOUT_MS);
 		}
-		for(int j = 0; j < buffer.capacity(); j++)
-		{
-			//System.out.print(Integer.toHexString(buffer.get(j))+"\t");
-			System.out.print(buffer.get(j)+"\t");
-		}
-		System.out.println();
+//		for(int j = 0; j < buffer.capacity(); j++)
+//		{
+//			//System.out.print(Integer.toHexString(buffer.get(j))+"\t");
+//			System.out.print(buffer.get(j)+"\t");
+//		}
+//		System.out.println();
+
 		x = ((buffer.get(3) << 8) | buffer.get(2)) >> 2;
 		x_d = ((double)x/SENSITIVITY) *G;
 		y = (((buffer.get(5) << 8) | buffer.get(4)) >> 2);
 		y_d = ((double)y/SENSITIVITY) *G;
 		z = ((buffer.get(7) << 8) | buffer.get(6)) >> 2;
 		z_d = ((double)z/SENSITIVITY) *G;
-		
+		int taps = 8192;
+		double accumulator_x = 0;
+		double accumulator_y = 0;
+		double accumulator_z = 0;
+		while(i < taps)
+		{
+			accumulator_x+=x_d;
+			accumulator_y+=y_d;
+			accumulator_z+=z_d;
+			i++;
+		}
+		x_d=accumulator_x/taps;
+		y_d=accumulator_y/taps;
+		z_d=accumulator_z/taps;
 		//System.out.println((float)x / 8192f + ", " + (float)y / 8192f + ", " + (float)z / 8192f);
 		try
 		{
