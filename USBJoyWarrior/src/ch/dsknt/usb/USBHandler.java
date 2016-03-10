@@ -1,9 +1,6 @@
 package ch.dsknt.usb;
 
 import java.nio.ByteBuffer;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import org.usb4java.DeviceHandle;
 import org.usb4java.LibUsb;
 import org.usb4java.LibUsbException;

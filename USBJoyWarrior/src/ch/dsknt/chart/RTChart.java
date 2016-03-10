@@ -38,7 +38,7 @@ public class RTChart
 		double height = screenSize.getHeight();
 		getData(1);
 		// Create Chart
-		chart = new Chart_XY((int)width, (int)height);
+		chart = new Chart_XY((int)width-15, (int)height);
 		chartPanel = buildPanel();
 		javax.swing.SwingUtilities.invokeLater(new Runnable()
 		{
